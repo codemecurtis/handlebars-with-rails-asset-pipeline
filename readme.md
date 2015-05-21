@@ -6,9 +6,36 @@
 
 ### Require in application.js
 * //= require handlebars
-* // = require_tree ./templates
 
-*Note: The ```require_tree ./templates``` is optional. Use this if you'd like to make a template folder in your asset pipeline. You can name the templates directory what ever you'd like!
+### Creating a Handlebars Template
+<pre><code>
+  &lt;script id="sample-template" type="text/x-handlebars-template"&gt;
+    &lt;li&gt;
+      &lt;h4&gt;{{title}}&lt;/h4&gt;
+      &lt;p&gt;{{content}}&lt;/p&gt;
+      &lt;p&gt;{{vote_count}}&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/script&gt;
+</pre></code>
+
+#### Sample use of this template
+
+<pre>
+<code>
+  var source = $('#sample-template').html();
+  var template = Handlebars.compile(source);
+</code>
+</pre>
+
+In the success/done promise of your ajax call use the below code.
+
+<pre>
+<code>
+  $('#myId').append(template(data))
+</code>
+</pre>
+
+**Note: `#myId` should be changed to the html element you would like to append the new data or template to.data parameter in the template variable is what I names my parameter in the success/done function.**
 
 ### New Directories
 From you application root
@@ -17,8 +44,7 @@ From you application root
 Make template directory in javascript asset pipeline
 
 ### Removing handlebars templates from your .erb files
-
-If you opted out of the ```require_tree ./templates``` then you will need to add this above the ```require_tree .```
+* // = require_tree ./templates
 
 From your application root directory
 ```$ cd app/assets/javascripts```
@@ -44,7 +70,7 @@ In yourFile.hbs file add your template code you would like to use. Such as
 Here is a simple implementation
 
 <pre><code>
-  car data = {title: "Hello", content: "World", vote_count: 1}
+  var data = {title: "Hello", content: "World", vote_count: 1}
   var context = {}
   context.questions = data
   HandlebarsTemplates&#91;'templates/yourFile'&#93;(context)
