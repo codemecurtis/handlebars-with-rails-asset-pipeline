@@ -35,7 +35,7 @@ In the success/done promise of your ajax call use the below code.
 </code>
 </pre>
 
-**Note: `#myId` should be changed to the html element you would like to append the new data or template to.data parameter in the template variable is what I names my parameter in the success/done function.**
+**Note: `#myId` should be changed to the html element you would like to append the new data or template to. The data parameter in the template argument is what I named my parameter in the success/done function.**
 
 ### New Directories
 From you application root
