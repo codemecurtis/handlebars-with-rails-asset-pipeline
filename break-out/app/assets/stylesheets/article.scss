@@ -1,0 +1,48 @@
+// Place all the styles related to the article controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+ul, li, p{
+	margin: 0;
+}
+
+.article-list{
+	list-style: none;
+}
+.article-list h3{
+	text-transform: capitalize;
+}
+.article h2{
+	margin: 0
+}
+.article .article-title, .article .article-content{
+	position: relative;
+	left: 30px;
+	// top: -25px;
+}
+
+.article-comment{
+	position: relative;
+	left: 10px;
+}
+
+.article-comment-list{
+	margin-bottom: 20px;
+	margin-left: 30px;
+}
+
+.article-comment-list h4{
+	margin: 20px 0 0 0;
+}
+
+.new-title, .new-content{
+	width: 200px;
+	height: 30px;
+	margin: 0 10px;
+}
+span.input{
+	float: right;
+}
+
+.seperator{
+	border-bottom: 1px solid #F00F00;
+}

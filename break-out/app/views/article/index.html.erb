@@ -1,0 +1,41 @@
+<h1>Articles</h1>
+<ul class="article-list">
+<% @articles.each_with_index do |article, index| %>
+	<li class="article article-<%= article.id %>">
+		
+		<h2><%= index + 1 %>.&nbsp;&nbsp;<span><%= article.title %></span></h2>
+		<p class="article-content"><%= article.content %></p>
+
+			<div class="article-comment-list">
+				<h4><%= article.title %>'s Comments</h4>
+				<% @article_comments = Comment.where(article_id: article.id) %>
+				<% @article_comments.each_with_index do |comment, index| %>
+					<p class="article-comment"><span><%= index + 1 %>.&nbsp;&nbsp;</span><%= comment.content %></p>
+				<% end %>
+			</div>
+			<%= form_for [article, @comment] do |f| %>
+				<%= f.label :content %>
+				<%= f.text_field :content %>
+				<%= f.submit %>
+			<% end %>	
+	</li>
+	<div class="seperator">&nbsp;</div>
+<% end %>
+</ul>
+
+<h2>Create New Article</h2>
+<%= form_for @article, :url => {:controller => "article", :action => "create"} do |f| %>
+	<div class="new-title">
+		<%= f.label :title %>
+		<span class="input">
+			<%= f.text_field :title %>
+		</span>
+	</div>
+	<div class="new-content">
+		<%= f.label :content %>
+		<span class="input">
+			<%= f.text_field :content %>
+		</span>
+	</div>
+	<%= f.submit %>
+<% end %>
