@@ -37,5 +37,13 @@
 			<%= f.text_field :content %>
 		</span>
 	</div>
-	<%= f.submit %>
+	<p class="new-question"><%= f.submit %></p>
 <% end %>
+
+<script id="new-article" type="texxt/x-handlebars-template">
+	<li class="article article-{{id}}">		
+		<h2><span>{{ title }}</span></h2>
+		<%= link_to "text", article_path("{{id}}") %>
+		<p class="article-content">{{ content }}</p>
+	</li>	
+</script>

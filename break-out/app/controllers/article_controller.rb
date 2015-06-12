@@ -10,7 +10,7 @@ class ArticleController < ApplicationController
   	@articles = Article.all
   	article = Article.new(article_params)
   	if article.save!
-  		redirect_to root_url
+  		render json: article
   	else
   		render 'index'
   	end
