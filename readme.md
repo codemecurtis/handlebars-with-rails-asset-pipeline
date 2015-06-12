@@ -47,10 +47,10 @@ Make template directory in javascript asset pipeline
 * // = require_tree ./templates
 
 From your application root directory
-```$ cd app/assets/javascripts```
-```$ mkdir templates```
-```$ cd templates```
-```$ touch yourFile.hbs``` HBS is the file extension for compiling handlebars
+* ```$ cd app/assets/javascripts```
+* ```$ mkdir templates```
+* ```$ cd templates```
+* ```$ touch yourFile.hbs``` HBS is the file extension for compiling handlebars
 
 In yourFile.hbs file add your template code you would like to use. Such as
 <pre><code>
