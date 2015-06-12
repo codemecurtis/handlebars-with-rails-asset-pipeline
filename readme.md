@@ -16,10 +16,10 @@
       &lt;p&gt;{{vote_count}}&lt;/p&gt;
     &lt;/li&gt;
   &lt;/script&gt;
-</pre></code>
+</pre>
+</code>
 
-#### Sample use of this template
-
+###Sample use of this template
 <pre>
 <code>
   var source = $('#sample-template').html();
@@ -31,7 +31,7 @@ In the success/done promise of your ajax call use the below code.
 
 <pre>
 <code>
-  $('#myId').append(template(data))
+$('#myId').append(template(data))
 </code>
 </pre>
 
@@ -65,7 +65,7 @@ In yourFile.hbs file add your template code you would like to use. Such as
 &lt;ul&gt;
 </pre></code>
 
-```Note: The question variable in the each statement comes from the context key that I created in my AJAX call.```
+`Note: The question variable in the each statement comes from the context key that I created in my AJAX call.`
 
 Here is a simple implementation
 
@@ -84,3 +84,8 @@ You can append it using jQuery or whatever else you'd like. This also eliminates
   var template = Handlebars.compile(source);
 </pre></code>
 
+#### Using Rails path_prefix
+
+When using rails path prefix's such as controller_path in your handlebars templates you typically pass it an instance of your model, however typically you do not have access to this so you need to be passing it the id of your returned model. However this creates a new problem making the handlebars snippt a string causes them to get interpeted in to the url as **%7B%7Bid%7D%7D**, this is obviously not what we want so using the following unescape we can solve this URL problem.
+
+<pre><code><%= link_to "Hello", CGI::unescape(question_path("{{id}}")) %></code></pre> 
