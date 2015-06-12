@@ -62,8 +62,10 @@ In yourFile.hbs file add your template code you would like to use. Such as
       &lt;p&gt;{{vote_count}}&lt;/p&gt;
     &lt;/li&gt;
   {{/each}}
-&lt;ul&gt;</pre>
-</code>
+&lt;ul&gt;
+</pre></code>
+
+<br>
 
 `**Note: The question variable in the each statement comes from the context key that I created in my AJAX call.**`
 
