@@ -39,10 +39,10 @@ In the success/done promise of your ajax call use the below code.
 **Note: `#myId` should be changed to the html element you would like to append the new data or template to. The data parameter in the template argument is what I named my parameter in the success/done function.**
 
 ### New Directories
-From you application root
-```$ cd app/assets/javascript```
-```$ mkdir template```
-Make template directory in javascript asset pipeline
+From you application root make template directory in javascript asset pipeline with the following commands
+* ```$ cd app/assets/javascript```
+* ```$ mkdir template```
+
 
 ### Removing handlebars templates from your .erb files
 * // = require_tree ./templates
