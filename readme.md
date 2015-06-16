@@ -47,6 +47,8 @@ From you application root make template directory in javascript asset pipeline w
 ### Removing handlebars templates from your .erb files
 * // = require_tree ./templates
 
+**`Note: This needs to be above the //= require_tree . but not before //= handlebars`**
+
 From your application root directory
 * ```$ cd app/assets/javascripts```
 * ```$ mkdir templates```
