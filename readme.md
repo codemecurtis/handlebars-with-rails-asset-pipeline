@@ -80,8 +80,9 @@ Here is a simple implementation
   <code>
   var data = {title: "Hello", content: "World", vote_count: 1}
   var context = {}
-  context.questions = data
-  HandlebarsTemplates&#91;'templates/yourFile'&#93;(context)
+  context.article = data
+  var template = HandlebarsTemplates['templates/new-article'](context)
+  $("element").append(template)
   </code>
 </pre>
 

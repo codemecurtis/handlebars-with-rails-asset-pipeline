@@ -8,7 +8,7 @@
 
 			<div class="article-comment-list">
 				<h4><%= article.title %>'s Comments</h4>
-				<% @article_comments = Comment.where(article_id: article.id) %>
+				<% @article_comments = article.comments %>
 				<% @article_comments.each_with_index do |comment, index| %>
 					<p class="article-comment"><span><%= index + 1 %>.&nbsp;&nbsp;</span><%= comment.content %></p>
 				<% end %>
